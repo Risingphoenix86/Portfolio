@@ -16,7 +16,10 @@ header {
     background-color: #2a607c;
     color: black;
 }
-
+img {
+    position: relative;
+    justify-content: center;
+}
 h1 {
     position: relative;
     left: 20px;
@@ -25,18 +28,14 @@ h1 {
     font-size: 48px;
     z-index: 2;
 }
-.navigation {
-    padding-top: 150px;
-    margin-left: 20px;
-    float: right;
+nav {
     font-size: 35px;
 }
-header ul {
+nav ul {
     list-style-type: none;
 }
-header li {
-    display: inline-block;
-    margin-left: 25px;
+nav li {
+    display: block;
 }
 
 a { /*settiong color of links in header and preventing changes to decoration when used*/
@@ -45,23 +44,96 @@ a { /*settiong color of links in header and preventing changes to decoration whe
 }
 .logo {
     position: absolute;
-    left: 10px;
-    top: 10px;
+    align-self: center;
     height: 250px;
     width: 250px;
     margin-bottom: 10px;
 }
 main {
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.container {
     display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(80px, auto);
+    grid-gap: 1em;
+    max-width: 1200px;
+    grid-template-areas:
+    "about-me"
+    "me-details"
+    "my-work"
+    "work-details"
+    "contact-me"
+    "my-contacts";
+    }
+.aboutme{
+    grid-area: about-me;
+    text-align: right;
 }
-main section {
-    grid-column: 1;
-    margin-right: 20px;
-    font-size: 30pxS;
-    justify-self: end;
+.me-details{
+    grid-area: me-details;
 }
-main section ul {
-    grid-column: 2;
+.mywork {
+    grid-area: my-work;
+}
+.work-details {
+    grid-area: work-details;
+}
+.contactme {
+    grid-area: contact-me;
+}
+.my-contacts {
+    grid-area: my-contacts;
+}
+.main-section-title {
+    padding-right: 25px;
+    text-align: center;
+    border-bottom: 10px solid midnightblue;
+}
+@media only screen and (min-width:768px) {
+    .logo {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: 250px;
+        width: 250px;
+        margin-bottom: 10px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-auto-rows: minmax(80px, auto);
+        grid-gap: 1em;
+        max-width: 1200px;
+        grid-template-areas:
+        "about-me me-details"
+        "my-work work-details"
+        "contact-me my-contacts";
+    }
+    h1 {
+        position: relative;
+        left: 20px;
+        top: 145px;
+        display: inline-block;
+        font-size: 48px;
+        z-index: 2;
+    }
+    nav {
+        padding-top: 150px;
+        margin-left: 20px;
+        float: right;
+        font-size: 30px;
+    }
+    
+    nav li {
+        display: inline-block;
+        margin-left: 25px;
+    }
+    .main-section-title {
+        padding-right:25px;
+        text-align: right;
+        border-right: 5px solid midnightblue;
+        border-bottom: 0px hidden ;
+    }
 }
