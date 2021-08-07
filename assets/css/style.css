@@ -11,6 +11,7 @@ body {
 }
 
 header {
+    min-width: 480px;
     padding: 20px;
     height: 270px;
     background-color: #2a607c;
@@ -20,25 +21,22 @@ img {
     position: relative;
     justify-content: center;
 }
-h1 {
-    position: relative;
-    left: 20px;
-    top: 145px;
-    display: inline-block;
-    font-size: 48px;
-    z-index: 2;
-}
+
 nav {
+    margin-top: 50px;
     font-size: 35px;
+    height: 200px;
+    float: right;
+    justify-content: center;
 }
-nav ul {
+ul {
     list-style-type: none;
 }
 nav li {
     display: block;
 }
 
-a { /*settiong color of links in header and preventing changes to decoration when used*/
+nav a { /*setting color of links in header and preventing changes to decoration when used*/
     color: black;
     text-decoration: none;
 }
@@ -47,18 +45,19 @@ a { /*settiong color of links in header and preventing changes to decoration whe
     align-self: center;
     height: 250px;
     width: 250px;
-    margin-bottom: 10px;
 }
+
 main {
     padding-left: 25px;
     padding-top: 10px;
+    Padding-right: 25px;
+    color: white;
 }
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: minmax(80px, auto);
+    grid-template-rows: auto auto auto auto auto auto;
     grid-gap: 1em;
-    max-width: 1200px;
     grid-template-areas:
     "about-me"
     "me-details"
@@ -70,6 +69,7 @@ main {
 .aboutme{
     grid-area: about-me;
     text-align: right;
+    ;
 }
 .me-details{
     grid-area: me-details;
@@ -78,18 +78,82 @@ main {
     grid-area: my-work;
 }
 .work-details {
-    grid-area: work-details;
+    grid-area: work-details;    
 }
+
+/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  /* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
+  .card-column {
+    flex: 1 0 100%;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 20px;
+  }
+  /* make each code card a flexbox column to align and justify content within it */
+  .portfolio-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 50px;
+    min-height: 200px;
+    margin-bottom: 20px;
+    
+      
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px solid White;
+    outline-offset: -2px;
+    
+  }
+  
+  .card-name {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    bottom: 25px;
+    left: 0px;
+    max-width: auto;
+    border: 2px solid white;
+    
+  }
+  
+  /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+  .portfolio-card:hover,
+  .portfolio-card:hover {
+    box-shadow: inset 0px 0px 8px palegoldenrod, 0 0 15px palegoldenrod;
+  } 
+ 
 .contactme {
     grid-area: contact-me;
 }
 .my-contacts {
     grid-area: my-contacts;
+    color: white;
+    text-decoration: none;
+    
 }
+main ul li a:link {
+    color: white;
+  }
+  
+  /* visited link */
+main ul li a:visited {
+    color: white;
+  }
 .main-section-title {
     padding-right: 25px;
+    padding-left: 25px;
     text-align: center;
-    border-bottom: 10px solid midnightblue;
+    border-bottom: 2px solid white;
 }
 @media only screen and (min-width:768px) {
     .logo {
@@ -103,24 +167,16 @@ main {
     .container {
         display: grid;
         grid-template-columns: 250px 1fr;
-        grid-auto-rows: minmax(80px, auto);
+        grid-template-rows: auto auto auto;
         grid-gap: 1em;
-        max-width: 1200px;
         grid-template-areas:
         "about-me me-details"
         "my-work work-details"
         "contact-me my-contacts";
     }
-    h1 {
-        position: relative;
-        left: 20px;
-        top: 145px;
-        display: inline-block;
-        font-size: 48px;
-        z-index: 2;
-    }
+    
     nav {
-        padding-top: 150px;
+        padding-top: 115px;
         margin-left: 20px;
         float: right;
         font-size: 30px;
@@ -132,8 +188,9 @@ main {
     }
     .main-section-title {
         padding-right:25px;
+        padding-bottom: 20pxS;
         text-align: right;
-        border-right: 5px solid midnightblue;
+        border-right: 2px solid white;
         border-bottom: 0px hidden ;
     }
 }
