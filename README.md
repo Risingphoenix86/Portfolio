@@ -4,3 +4,4 @@ This is my protfolio project to house and display links to some of my projects t
 
 The page can be viewed at:
 
+![image](https://user-images.githubusercontent.com/7930889/128612034-2885fab9-ef79-44e7-a206-60ab41072cd0.png)
