@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
 }
-
+/*designed mobile first for ease of viewing*/
 body {
     color: white;
     background-color: #6b6b6b;
@@ -17,7 +17,8 @@ header {
     background-color: #2a607c;
     color: black;
 }
-img {
+
+header img {
     position: relative;
     justify-content: center;
 }
@@ -29,14 +30,16 @@ nav {
     float: right;
     justify-content: center;
 }
+
 ul {
     list-style-type: none;
 }
+
 nav li {
     display: block;
 }
 
-nav a { /*setting color of links in header and preventing changes to decoration when used*/
+nav a {
     color: black;
     text-decoration: none;
 }
@@ -54,6 +57,8 @@ main {
     padding-bottom: 10px;
     color: white;
 }
+
+/*setting up grid for main page content*/
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -82,7 +87,7 @@ main {
     grid-area: work-details;    
 }
 
-/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+/*styling for portfolio cards once I have some*/ 
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -90,54 +95,49 @@ main {
     
   }
 
-  .justify-center {
+.justify-center {
     justify-content: center;
-  }
-
-  /* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
-  .card-column {
-    flex: 1 0 100%;
-    /* when the screen resizes, make it so our columns don't jump in size */
-    transition: flex-basis 500ms linear;
-    margin-bottom: 20px;
-  }
-  /* make each code card a flexbox column to align and justify content within it */
-  .portfolio-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-width: 50px;
+}
+.portfolio-card-1 { /*styling for 1st portfolio card only*/
+    position: relative;
+    flex: 2 2 300px;
+    min-width: 100%;
     min-height: 200px;
-    margin-bottom: 20px;
-    
-      
-    /* outline is like border, but on the outside of the box instead of inside */
+    margin-right: 5px;
+    margin-bottom: 20px;  
     outline: 2px solid White;
     outline-offset: -2px;
     
   }
-  .card-image{
-    background-image: url("https://placeholder.com/150x400");
-  }
-  
-  .card-name {
-    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
-    
-    background-color:#6b6b6b;
+.portfolio-card {
     position: relative;
-    bottom: 25px;
-    left: 0px;
-    padding: 5px;
+    flex: 1 1 150px;
+    min-width: 50px;
+    min-height: 200px;
+    margin-right: 5px;
+    margin-bottom: 20px;  
+    outline: 2px solid White;
+    outline-offset: -2px;
+    
+}
+
+/* placeholder until actual images from applications can be used*/
+.card-image {
+    background-image: url("https://via.placeholder.com/150");
+}
+.card-name {
+    padding: 6px;
+    white-space: nowrap;
+    background-color: black;
+    position: absolute;
+    bottom: 10px;
     max-width: min-content;
     border: 2px solid white;
-    
-  }
-  
-  /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
-  .portfolio-card:hover,
-  .portfolio-card:hover {
+}
+/* adding glow to highlight portfolio box */  
+.portfolio-card:hover {
     box-shadow: inset 0px 0px 8px palegoldenrod, 0 0 15px palegoldenrod;
-  } 
+} 
  
 .contactme {
     grid-area: contact-me;
@@ -149,14 +149,15 @@ main {
     padding-bottom: 5px;
     
 }
+/* preventing color change on contact link visit */
 main ul li a:link {
     color: white;
-  }
-  
-  /* visited link */
+}
 main ul li a:visited {
     color: white;
-  }
+}
+
+/* styling for main content title sections */
 .main-section-title {
     padding-right: 25px;
     padding-left: 25px;
@@ -165,8 +166,10 @@ main ul li a:visited {
 }
 
 footer {
-    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
 }
+/*styling for desktop/tablet sized screens */
 @media only screen and (min-width:768px) {
     .logo {
         position: absolute;
