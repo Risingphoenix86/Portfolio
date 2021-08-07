@@ -51,6 +51,7 @@ main {
     padding-left: 25px;
     padding-top: 10px;
     Padding-right: 25px;
+    padding-bottom: 10px;
     color: white;
 }
 .container {
@@ -115,13 +116,19 @@ main {
     outline-offset: -2px;
     
   }
+  .card-image{
+    background-image: url("https://placeholder.com/150x400");
+  }
   
   .card-name {
     /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    
+    background-color:#6b6b6b;
     position: relative;
     bottom: 25px;
     left: 0px;
-    max-width: auto;
+    padding: 5px;
+    max-width: min-content;
     border: 2px solid white;
     
   }
@@ -139,6 +146,7 @@ main {
     grid-area: my-contacts;
     color: white;
     text-decoration: none;
+    padding-bottom: 5px;
     
 }
 main ul li a:link {
@@ -154,6 +162,10 @@ main ul li a:visited {
     padding-left: 25px;
     text-align: center;
     border-bottom: 2px solid white;
+}
+
+footer {
+    justify-content: center;
 }
 @media only screen and (min-width:768px) {
     .logo {
