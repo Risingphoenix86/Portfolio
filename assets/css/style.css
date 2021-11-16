@@ -189,14 +189,14 @@ header nav a {
 
 .feature4 {
     grid-area: feature4;
-    background-image: url("");
+    background-image: url("../images/Project2.PNG");
     background-size: cover;
     background-position: top left;
 }
 
 .feature5 {
     grid-area: feature5;
-    background-image: url("");
+    background-image: url("../images/tech-blog.PNG");
     background-size: cover;
     background-position: top left;
 }
