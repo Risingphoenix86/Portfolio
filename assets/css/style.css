@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -39,6 +40,7 @@ header img {
 
 nav {
     margin-top: 50px;
+    margin-bottom: 10px;
     font-size: 35px;
     height: 200px;
     float: right;
