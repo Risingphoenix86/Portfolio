@@ -3,11 +3,26 @@
     padding: 0;
     margin: 0;
 }
-/*designed mobile first for ease of viewing*/
+
+:root {
+    --primary-color: #404b65;
+    --secondary-color: #97bec6;
+    --tertiary-color: gray;
+}
+
 body {
     color: white;
     background-color: #6b6b6b;
 
+}
+
+section {
+    padding: 3%
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 header {
@@ -31,18 +46,26 @@ nav {
     justify-content: center;
 }
 
-ul {
+
+header ul {
     list-style-type: none;
 }
 
-nav li {
+header nav li {
     display: block;
+    width: 100%;
+    margin: 25px 0px 25px 0px;
 }
 
-nav a {
+header nav a {
     color: black;
     text-decoration: none;
+    width: 100%;
+    padding: 5px;
+    font-weight: normal;
+    border-bottom: 2px solid;
 }
+
 .logo {
     position: absolute;
     align-self: center;
@@ -50,127 +73,177 @@ nav a {
     width: 250px;
 }
 
-main {
-    padding-left: 25px;
-    padding-top: 10px;
-    Padding-right: 25px;
-    padding-bottom: 10px;
+.content {
+    width: 80vw;
+    margin: auto;
+    position: relative;
+}
+
+.section-title {
     color: white;
-}
-
-/*setting up grid for main page content*/
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-gap: 1em;
-    grid-template-areas:
-    "about-me"
-    "me-details"
-    "my-work"
-    "work-details"
-    "contact-me"
-    "my-contacts";
-    }
-.aboutme{
-    grid-area: about-me;
+    margin-right: 2%;
+    padding-right: 2%;
+    border-right: 2px solid;
     text-align: right;
-    ;
-}
-.me-details{
-    grid-area: me-details;
-}
-.mywork {
-    grid-area: my-work;
-}
-.work-details {
-    grid-area: work-details;    
+    position: relative;
+    width: 10%;
 }
 
-/*styling for portfolio cards once I have some*/ 
-.row {
+.content-right {
+    width: 90%;
+}
+
+.about p {
+    margin: 1vw;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px 15px;
+    grid-template-areas: "featured featured featured featured feature2 feature2" "featured featured featured featured feature3 feature3" "feature4 feature4 feature5 feature5 feature6 feature6";
+    width: 100%;
+    height: 40vw;
+}
+
+.grid-item {
+    border: 5px solid;
+    border-color: black;
+    position: relative;
+}
+
+.grid-item a {
+    color: black;
+}
+
+.grid-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.grid-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: var(--tertiary-color);
+    top: 0px;
+    left: 0px;
+    opacity: .5;
+    transition: .5s;
+}
+
+.grid-item:hover .grid-img::after {
+    opacity:0;
+}
+
+.grid-subtitle {
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    bottom: 1vw;
+    padding: .25vw;
+}
+
+.grid-subtitle h4 {
+    text-align: left;
+    margin-left: .2vw;
+    margin-bottom: .1vw;
+}
+
+.grid-subtitle p {
+    text-align: left;
+    padding: 0px;
+    margin-left: .2vw;
+    margin-top: .1vw;
+}
+
+.featured {
+    grid-area: featured;
+    background-image: url("../images/Groovy_movie_peek.jpg");
+    background-size: cover;
+    background-position: top left;
+}
+
+.feature2 {
+    grid-area: feature2;
+    background-image: url("../images/weather_dash.png");
+    background-size: cover;
+    background-position: top left;
+}
+
+.feature3 {
+    grid-area: feature3;
+    background-image: url("../images/Code_quiz.png");
+    background-size: cover;
+    background-position: top left;
+}
+
+.feature4 {
+    grid-area: feature4;
+    background-image: url("");
+    background-size: cover;
+    background-position: top left;
+}
+
+.feature5 {
+    grid-area: feature5;
+    background-image: url("");
+    background-size: cover;
+    background-position: top left;
+}
+
+.feature6 {
+    grid-area: feature6;
+    background-image: url("");
+    background-size: cover;
+    background-position: top left;
+}
+
+
+.contact-me {
+    margin: 0px 15px;
+}
+
+.contact-me ul {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    
-  }
-
-.justify-center {
-    justify-content: center;
-}
-.portfolio-card-1 { /*styling for 1st portfolio card only*/
-    position: relative;
-    flex: 2 2 300px;
-    min-width: 100%;
-    min-height: 200px;
-    margin-right: 5px;
-    margin-bottom: 20px;  
-    outline: 2px solid White;
-    outline-offset: -2px;
-    
-  }
-.portfolio-card {
-    position: relative;
-    flex: 1 1 150px;
-    min-width: 50px;
-    min-height: 200px;
-    margin-right: 5px;
-    margin-bottom: 20px;  
-    outline: 2px solid White;
-    outline-offset: -2px;
-    
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
 }
 
-/* placeholder until actual images from applications can be used*/
-.card-image {
-    background-image: url("https://via.placeholder.com/150");
-}
-.card-name {
-    padding: 6px;
-    white-space: nowrap;
-    background-color: black;
-    position: absolute;
-    bottom: 10px;
-    max-width: min-content;
-    /* border: 2px solid white; */
-}
-/* adding glow to highlight portfolio box */  
-.portfolio-glow:hover {
-    box-shadow: inset 0px 0px 8px palegoldenrod, 0 0 15px palegoldenrod;
-} 
- 
-.contactme {
-    grid-area: contact-me;
-}
-.my-contacts {
-    grid-area: my-contacts;
-    color: white;
+.contact-me ul li a {
+    margin: 5px 10px;
+    padding: 5px;
+    font-weight: bolder;
+    font-size: 1.1vw;
     text-decoration: none;
-    padding-bottom: 5px;
-    
-}
-/* preventing color change on contact link visit */
-main ul li a:link {
     color: white;
-}
-main ul li a:visited {
-    color: white;
+    border-bottom: 2px solid;
+    border-color: white;
 }
 
-/* styling for main content title sections */
-.main-section-title {
-    padding-right: 25px;
-    padding-left: 25px;
-    text-align: center;
-    border-bottom: 2px solid white;
+.contact-me ul li a:hover {
+    color: black;
+    background-color: white;
 }
 
 footer {
     margin-top: 20px;
     text-align: center;
+    font-weight: lighter;
 }
 /*styling for desktop/tablet sized screens */
-@media only screen and (min-width:768px) {
+@media only screen and (max-width:768px) {
     .logo {
         position: absolute;
         left: 10px;
@@ -182,7 +255,7 @@ footer {
     
     
     nav {
-        padding-top: 115px;
+        
         margin-left: 20px;
         float: right;
         font-size: 30px;
@@ -198,5 +271,95 @@ footer {
         text-align: right;
         border-right: 2px solid white;
         border-bottom: 0px hidden ;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .flex-row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section-title{
+        border: none;
+        margin: auto;
+        margin-bottom: 2vw;
+        text-align: center;
+        width: 100%;
+        font-size: 3.5vw;
+    }
+
+    .grid-container {
+        display: block;
+        grid-template-columns: fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 15px;
+        grid-template-areas: "featured featured featured featured feature2 feature2" "featured featured featured featured feature3 feature3" "feature4 feature4 feature5 feature5 feature6 feature6";
+        width: 100%;
+        height: 100%;
+    }
+
+    .grid-item {
+        min-height: 40vw;
+        margin: 2vw auto;
+    }
+
+    .grid-img {
+        min-height: 40vw;
+    }
+
+    .contact-me {
+        position: relative;
+        bottom: 0px;
+    }
+
+    header {
+        display: block;
+    }
+
+    header a {
+        text-decoration: none;
+    }
+
+    header h1 {
+        font-size: 5vw;
+        width: 100%;
+        left: 0px;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li {
+        width: 100%;
+        margin: 25px 0px 25px 0px;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        padding: 5px;
+        font-weight: normal;
+        font-size: 4vw;
+        border-bottom: 2px solid;
+    }
+
+    .contact-me ul {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-me ul li {
+        margin-top: 3vw;
+    }
+
+    .contact-me ul li a {
+        width: 100%;
+        padding: 5px;
+        font-weight: normal;
+        font-size: 3vw;
+        border-bottom: 2px solid;
     }
 }

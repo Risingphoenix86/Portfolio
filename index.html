@@ -5,7 +5,6 @@
   <title>Portfolio page</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
@@ -29,53 +28,106 @@
     </nav>
 
   </header>
-  <main class="container w-100">
-    <div class="row mw-100 justify-left ">
-      <h2 id="About-Me" class="col-4 main-section-title aboutme">About Me</h2>
-    
-      <p class="col me-details">
-          I am a programming student enrolled in The Ohio State University coding bootcamp. 
-          I see myself as an eternal student, loving to learn new languages, methods, and styles of thinking. 
+  
+  <section id="About-Me">
+    <div class="flex-row">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="content-right">
+        <p> I am a programming student enrolled in The Ohio State University coding bootcamp. 
+          I see myself as an eternal student, loving to learn new languages, methods, and styles of thinking.
+        </p>
+        <p> 
           I am excited for the future that learning to code has opened up for me. 
           Below this section you will find examples of my work, and further beneath that you will find a link to my Linkedin profile, Github Repository, and a link with my email address that will open in your default email program. 
           I look forward to hearing from you!
-      </p>
+        </p>
+      </div>
     </div>
-    <div class="row justify-content-start">  
-      <h2 id="My-Work" class = "col-4 main-section-title mywork">My Work</h2>
-
-      <section class = "work-details col">      
-          <card class="portfolio-glow portfolio-card-1 mw-100" onclick="location.href='https://github.com/lydiawdesign/Movie-Picker-App';">
-            <img src= "assets/images/Groovy_movie_peek.jpg" class="img-fluid img-thumbnail">
-            <h3 class="card-name">Group Project: Movie Picker Application</h3>
-          </card>
-          <card class="portfolio-glow portfolio-cards w-25" onclick="location.href='https://github.com/Risingphoenix86/Homework6-WeatherDash';">
-            <img src="assets/images/weather_dash.png" class="img-fluid img-thumbnail">
-            <h3 class="card-name" >Individual Work: Weather Dashboard</h3>
-          </card>
-          <card class="portfolio-glow portfolio-card w-25" onclick="location.href='https://github.com/Risingphoenix86/Homework4';">
-            <img src="assets/images/Code_quiz.png" class="img-fluid img-thumbnail">
-            <h3 class="card-name">Individual Work: Coding Quiz</h3>
-          </card>
-      </section>
-    </div>
-    <div class="row justify-content-start">  
-      <h2 id="Contact-Me" class = "col-4 main-section-title contactme">Contact Me</h2>
+  </section>
+  
+  <section id="My-Work">
+    <div class="flex-row">
+      <div class="section-title">
+        <h2>My Work</h2>
+      </div> 
       
-      <ul class = "my-contacts col">
-        <li>
-          <a href="https://www.linkedin.com/in/kyle-lux-" title="My Linkedin Profile">Linkedin 📑</a>
-        </li>
-        <li>
-          <a href="https://github.com/Risingphoenix86" title="My Github Repository">GitHub 📑</a>
-        </li>
-        <li>
-          <a href="mailto:kyleslux86@gmail.com" title="My email address">kyleslux86@gmail.com 📑</a>
-        </li>
-      </ul>
+      <div class="content-right">
+        <div class="grid-container">
+          <div class="featured grid-item">
+            <a href='https://github.com/lydiawdesign/Movie-Picker-App' title="Movie Picker App" target="_blank">
+              <div class="grid-img">
+                <div class="grid-subtitle">
+                  <h4>Movie Picker Application</h4>
+                  <p>Group Project: Web App</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="feature2 grid-item">
+            <a href="https://github.com/Risingphoenix86/Homework6-WeatherDash" title="Weather Dashboard" target="_blank">
+              <div class="grid-img">
+                <div class="grid-subtitle">
+                  <h4>Weather Dashboard</h4>
+                  <p>Individual Project: Web App</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="feature3 grid-item">
+            <a href="https://github.com/Risingphoenix86/Homework4" title="Coding Quiz" target="_blank">
+              <div class="grid-img">
+                <div class="grid-subtitle">
+                  <h4>Coding Quiz</h4>
+                  <p>Individual Project: Web App</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- <div class="grid-item">
+            <a href="" title="" target="_blank">
+              <div class="grid-img">
+                <div class="grid-subtitle">
+                  <h4></h4>
+                  <p></p>
+                </div>
+              </div>
+            </a>
+          </div> -->
+        
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <section id="Contact-Me">
+    <div class="contact-me flex-row">
+      <div class="section-title">
+        <h3>Contact Me</h3>
+      </div>
+      <div class="content-right">
+        <div class="">
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/kyle-lux-" title="My Linkedin Profile">Linkedin 📑</a>
+            </li>
+            <li>
+              <a href="https://github.com/Risingphoenix86" title="My Github Repository">GitHub 📑</a>
+            </li>
+            <li>
+              <a href="mailto:kyleslux86@gmail.com" title="My email address">kyleslux86@gmail.com 📑</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <footer>
-    <h6>Made with HTML and CSS by: Kyle Lux</h6>
+    <p>Made with HTML and CSS by: Kyle Lux</p>
   </footer>
 </body>
